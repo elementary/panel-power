@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2024-08-07 00:16+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
+"PO-Revision-Date: 2025-07-26 16:55+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "wingpanel/indicator-power-extra/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/power.metainfo.xml.in:11
 msgid "Power Indicator"
@@ -56,59 +56,62 @@ msgstr ""
 #: data/power.metainfo.xml.in:63
 msgid "Drop inaccurate \"Apps using lots of power\" feature"
 msgstr ""
+"Remover a funcionalidade imprecisa \"Aplicativos que consomem muita energia\""
 
 #: data/power.metainfo.xml.in:84 data/power.metainfo.xml.in:102
 #: data/power.metainfo.xml.in:118
 msgid "New features:"
-msgstr ""
+msgstr "Novas funcionalidades:"
 
 #: data/power.metainfo.xml.in:86
 msgid "Scroll horizontally on the panel icon to change display brightness"
-msgstr ""
+msgstr "Role horizontalmente no ícone do painel para alterar o brilho da tela"
 
 #: data/power.metainfo.xml.in:90
 msgid "Do a better job hiding the brightness slider on unsupported displays"
 msgstr ""
+"Melhorar a ocultação do controle deslizante de brilho em telas não "
+"compatíveis"
 
 #: data/power.metainfo.xml.in:104
 msgid "Show brightness level when scrolled"
-msgstr ""
+msgstr "Mostrar o nível de brilho ao rolar"
 
 #: data/power.metainfo.xml.in:105
 msgid "Show battery percentage automatically at 20% or lower"
-msgstr ""
+msgstr "Exibir a porcentagem da bateria automaticamente em 20% ou menos"
 
 #: data/power.metainfo.xml.in:109
 msgid "Match scroll direction with Sound indicator"
-msgstr ""
+msgstr "Corresponder a direção da rolagem com o indicador sonoro"
 
 #: data/power.metainfo.xml.in:110
 msgid "Show \"Fully Charged\" at 100% when plugged in"
-msgstr ""
+msgstr "Mostrar \"Totalmente Carregado\" em 100% quando conectado à tomada"
 
 #: data/power.metainfo.xml.in:120
 msgid "Show battery statistics when selected"
-msgstr ""
+msgstr "Mostrar estatísticas da bateria quando selecionado"
 
 #: data/power.metainfo.xml.in:121
 msgid "Launch apps using power when selected"
-msgstr ""
+msgstr "Inicie aplicativos usando energia quando selecionado"
 
 #: data/power.metainfo.xml.in:122
 msgid "Control display brightness by scrolling the indicator"
-msgstr ""
+msgstr "Controle o brilho da tela rolando o indicador"
 
 #: data/power.metainfo.xml.in:126
 msgid "Improvements for desktops with peripherals"
-msgstr ""
+msgstr "Aprimoramentos para desktops com periféricos"
 
 #: data/power.metainfo.xml.in:127
 msgid "Filter out internal devices"
-msgstr ""
+msgstr "Filtrar dispositivos internos"
 
 #: data/power.metainfo.xml.in:128
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "Exibir dica de ferramenta ao passar o mouse"
 
 #: data/power.metainfo.xml.in:129
 msgid "Performance improvements"
