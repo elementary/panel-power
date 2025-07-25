@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
 "PO-Revision-Date: 2025-07-26 16:55+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "wingpanel/indicator-power-extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -52,6 +52,7 @@ msgstr "Traduções atualizadas"
 #: data/power.metainfo.xml.in:50
 msgid "Redesign battery panel icon and show more fine-grained levels"
 msgstr ""
+"Redesenhar o ícone do painel da bateria e mostrar níveis mais detalhados"
 
 #: data/power.metainfo.xml.in:63
 msgid "Drop inaccurate \"Apps using lots of power\" feature"
