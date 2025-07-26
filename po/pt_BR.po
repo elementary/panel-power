@@ -3,35 +3,35 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2021-03-14 16:45+0000\n"
-"Last-Translator: Leonardo <leonardo@elementary.io>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
-"wingpanel/wingpanel-indicator-power/pt_BR/>\n"
+"PO-Revision-Date: 2025-07-27 21:55+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
+"wingpanel/power/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:48+0000\n"
 
 #: src/Indicator.vala:185
 #, c-format
 msgid "%s: %s"
-msgstr ""
+msgstr "%s: %s"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to hide percentage"
-msgstr ""
+msgstr "Clique com o botão do meio para ocultar a porcentagem"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to show percentage"
-msgstr ""
+msgstr "Clique com o botão do meio para exibir a porcentagem"
 
 #: src/Indicator.vala:194
 #, c-format
 msgid "Screen brightness: %i"
-msgstr ""
+msgstr "Brilho da tela: %i"
 
 #: src/Indicator.vala:195
 msgid "Scroll to change screen brightness"
@@ -120,22 +120,18 @@ msgid "Full"
 msgstr ""
 
 #: src/Services/Device.vala:345
-#, fuzzy
-#| msgid "%i%% charged"
 msgid "Fully charged"
-msgstr "%i%% carregado"
+msgstr "Totalmente carregado"
 
 #: src/Services/Device.vala:350
-#, fuzzy, c-format
-#| msgid "%i%% charged"
+#, c-format
 msgid "%.0f%% charged"
-msgstr "%i%% carregado"
+msgstr "%.0f%% carregado"
 
 #: src/Services/Device.vala:353
-#, fuzzy, c-format
-#| msgid "%i%% remaining"
+#, c-format
 msgid "%.0f%% remaining"
-msgstr "%i%% restantes"
+msgstr "%.0f%% restantes"
 
 #: src/Services/Device.vala:363
 #, c-format
@@ -187,7 +183,7 @@ msgstr "Dispositivo"
 #: src/Widgets/DisplayWidget.vala:34
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Widgets/PopoverWidget.vala:65
 msgid "Show Percentage"
@@ -198,14 +194,12 @@ msgid "Power Settings…"
 msgstr "Configurações de energia…"
 
 #: src/Widgets/PowerModeList.vala:67
-#, fuzzy
-#| msgid "Power"
 msgid "Power Saver"
-msgstr "Energia"
+msgstr "Economia de Energia"
 
 #: src/Widgets/PowerModeList.vala:68
 msgid "Balanced"
-msgstr ""
+msgstr "Equilibrado"
 
 #: src/Widgets/PowerModeList.vala:69
 msgid "Performance"
