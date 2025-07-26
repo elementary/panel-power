@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
 "PO-Revision-Date: 2025-07-27 21:55+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "wingpanel/power/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -35,7 +35,7 @@ msgstr "Brilho da tela: %i"
 
 #: src/Indicator.vala:195
 msgid "Scroll to change screen brightness"
-msgstr ""
+msgstr "Role para alterar o brilho da tela"
 
 #: src/Services/Device.vala:65
 msgid "Battery"
@@ -83,41 +83,41 @@ msgstr "Controlador"
 
 #: src/Services/Device.vala:87
 msgid "Pen"
-msgstr ""
+msgstr "Caneta"
 
 #: src/Services/Device.vala:89
 msgid "Plugged In"
-msgstr ""
+msgstr "Conectado"
 
 #: src/Services/Device.vala:325
 msgid "Unknown. Device may be locked."
-msgstr ""
+msgstr "Desconhecido. O dispositivo pode estar bloqueado."
 
 #. Coarse battery level can sometimes be unknown, percentage is more reliable
 #: src/Services/Device.vala:332
 msgctxt "battery-level"
 msgid "Critical"
-msgstr ""
+msgstr "Crítico"
 
 #: src/Services/Device.vala:334
 msgctxt "battery-level"
 msgid "Low"
-msgstr ""
+msgstr "Baixo"
 
 #: src/Services/Device.vala:336
 msgctxt "battery-level"
 msgid "Good"
-msgstr ""
+msgstr "Bom"
 
 #: src/Services/Device.vala:338
 msgctxt "battery-level"
 msgid "High"
-msgstr ""
+msgstr "Alto"
 
 #: src/Services/Device.vala:340
 msgctxt "battery-level"
 msgid "Full"
-msgstr ""
+msgstr "Completo"
 
 #: src/Services/Device.vala:345
 msgid "Fully charged"
@@ -203,7 +203,7 @@ msgstr "Equilibrado"
 
 #: src/Widgets/PowerModeList.vala:69
 msgid "Performance"
-msgstr ""
+msgstr "Desempenho"
 
 #~ msgid "Calculating…"
 #~ msgstr "Calculando…"
