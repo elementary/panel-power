@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2023-02-04 12:25+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"wingpanel/wingpanel-indicator-power/zh_Hans/>\n"
+"PO-Revision-Date: 2025-08-10 04:55+0000\n"
+"Last-Translator: JieXu <xujie0739@qq.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"l10n.elementaryos.org/projects/wingpanel/power/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:48+0000\n"
 
 #: src/Indicator.vala:185
@@ -91,49 +91,47 @@ msgstr "电源已接入"
 
 #: src/Services/Device.vala:325
 msgid "Unknown. Device may be locked."
-msgstr ""
+msgstr "未知。设备可能已锁定。"
 
 #. Coarse battery level can sometimes be unknown, percentage is more reliable
 #: src/Services/Device.vala:332
 msgctxt "battery-level"
 msgid "Critical"
-msgstr ""
+msgstr "严重不足"
 
 #: src/Services/Device.vala:334
 msgctxt "battery-level"
 msgid "Low"
-msgstr ""
+msgstr "不足"
 
 #: src/Services/Device.vala:336
 msgctxt "battery-level"
 msgid "Good"
-msgstr ""
+msgstr "良好"
 
 #: src/Services/Device.vala:338
 msgctxt "battery-level"
 msgid "High"
-msgstr ""
+msgstr "较高"
 
 #: src/Services/Device.vala:340
 msgctxt "battery-level"
 msgid "Full"
-msgstr ""
+msgstr "已充满"
 
 #: src/Services/Device.vala:345
 msgid "Fully charged"
 msgstr "已充满"
 
 #: src/Services/Device.vala:350
-#, fuzzy, c-format
-#| msgid "%i%% charged"
+#, c-format
 msgid "%.0f%% charged"
-msgstr "已充满 %i%%"
+msgstr "已充电 %.0f%%"
 
 #: src/Services/Device.vala:353
-#, fuzzy, c-format
-#| msgid "%i%% remaining"
+#, c-format
 msgid "%.0f%% remaining"
-msgstr "剩余 %i%%"
+msgstr "剩余 %.0f%%"
 
 #: src/Services/Device.vala:363
 #, c-format
@@ -190,18 +188,16 @@ msgid "Power Settings…"
 msgstr "电源设置…"
 
 #: src/Widgets/PowerModeList.vala:67
-#, fuzzy
-#| msgid "Power"
 msgid "Power Saver"
-msgstr "电源"
+msgstr "省电"
 
 #: src/Widgets/PowerModeList.vala:68
 msgid "Balanced"
-msgstr ""
+msgstr "平衡"
 
 #: src/Widgets/PowerModeList.vala:69
 msgid "Performance"
-msgstr ""
+msgstr "性能"
 
 #~ msgid "Calculating…"
 #~ msgstr "正在计算…"
