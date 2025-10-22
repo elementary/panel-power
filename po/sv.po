@@ -3,39 +3,39 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2018-10-23 07:13+0000\n"
-"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
-"Language-Team: Swedish <https://weblate.elementary.io/projects/wingpanel/"
-"wingpanel-indicator-power/sv/>\n"
+"PO-Revision-Date: 2025-10-22 09:58+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
+"power/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:48+0000\n"
 
 #: src/Indicator.vala:185
 #, c-format
 msgid "%s: %s"
-msgstr ""
+msgstr "%s: %s"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to hide percentage"
-msgstr ""
+msgstr "Mellanklick för att dölja procentsatsen"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to show percentage"
-msgstr ""
+msgstr "Mittklicka för att visa procent"
 
 #: src/Indicator.vala:194
 #, c-format
 msgid "Screen brightness: %i"
-msgstr ""
+msgstr "Skärmens ljusstyrka: %i"
 
 #: src/Indicator.vala:195
 msgid "Scroll to change screen brightness"
-msgstr ""
+msgstr "Bläddra för att ändra skärmens ljusstyrka"
 
 #: src/Services/Device.vala:65
 msgid "Battery"
@@ -71,7 +71,7 @@ msgstr "Mediaspelare"
 
 #: src/Services/Device.vala:81
 msgid "Tablet"
-msgstr "Surfplatta"
+msgstr "Ritplatta"
 
 #: src/Services/Device.vala:83
 msgid "Computer"
@@ -79,63 +79,59 @@ msgstr "Dator"
 
 #: src/Services/Device.vala:85
 msgid "Controller"
-msgstr ""
+msgstr "Kontroller"
 
 #: src/Services/Device.vala:87
 msgid "Pen"
-msgstr ""
+msgstr "Penna"
 
 #: src/Services/Device.vala:89
 msgid "Plugged In"
-msgstr ""
+msgstr "Inkopplad"
 
 #: src/Services/Device.vala:325
 msgid "Unknown. Device may be locked."
-msgstr ""
+msgstr "Okänd. Enheten kan vara låst."
 
 #. Coarse battery level can sometimes be unknown, percentage is more reliable
 #: src/Services/Device.vala:332
 msgctxt "battery-level"
 msgid "Critical"
-msgstr ""
+msgstr "Kritiskt"
 
 #: src/Services/Device.vala:334
 msgctxt "battery-level"
 msgid "Low"
-msgstr ""
+msgstr "Låg"
 
 #: src/Services/Device.vala:336
 msgctxt "battery-level"
 msgid "Good"
-msgstr ""
+msgstr "Bra"
 
 #: src/Services/Device.vala:338
 msgctxt "battery-level"
 msgid "High"
-msgstr ""
+msgstr "Hög"
 
 #: src/Services/Device.vala:340
 msgctxt "battery-level"
 msgid "Full"
-msgstr ""
+msgstr "Full"
 
 #: src/Services/Device.vala:345
-#, fuzzy
-#| msgid "%i%% charged"
 msgid "Fully charged"
-msgstr "%i%% uppladdat"
+msgstr "Fullt laddat"
 
 #: src/Services/Device.vala:350
-#, fuzzy, c-format
-#| msgid "%i%% charged"
+#, c-format
 msgid "%.0f%% charged"
-msgstr "%i%% uppladdat"
+msgstr "%.0f%% laddat"
 
 #: src/Services/Device.vala:353
-#, fuzzy, c-format
-#| msgid "%i%% remaining"
+#, c-format
 msgid "%.0f%% remaining"
-msgstr "%i%% återstår"
+msgstr "%.0f%% återstår"
 
 #: src/Services/Device.vala:363
 #, c-format
@@ -187,7 +183,7 @@ msgstr "Enhet"
 #: src/Widgets/DisplayWidget.vala:34
 #, c-format
 msgid "%i%%"
-msgstr ""
+msgstr "%i%%"
 
 #: src/Widgets/PopoverWidget.vala:65
 msgid "Show Percentage"
@@ -198,18 +194,16 @@ msgid "Power Settings…"
 msgstr "Ströminställningar…"
 
 #: src/Widgets/PowerModeList.vala:67
-#, fuzzy
-#| msgid "Power"
 msgid "Power Saver"
-msgstr "Ström"
+msgstr "Energisparläge"
 
 #: src/Widgets/PowerModeList.vala:68
 msgid "Balanced"
-msgstr ""
+msgstr "Balanserad"
 
 #: src/Widgets/PowerModeList.vala:69
 msgid "Performance"
-msgstr ""
+msgstr "Prestanda"
 
 #~ msgid "Calculating…"
 #~ msgstr "Beräknar…"
