@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2025-10-22 09:58+0000\n"
+"PO-Revision-Date: 2025-10-31 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
 "power/sv/>\n"
@@ -22,11 +22,11 @@ msgstr "%s: %s"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to hide percentage"
-msgstr "Mellanklick för att dölja procentsatsen"
+msgstr "Mittenklick för att dölja procent"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to show percentage"
-msgstr "Mittklicka för att visa procent"
+msgstr "Mittenklicka för att visa procent"
 
 #: src/Indicator.vala:194
 #, c-format
@@ -35,7 +35,7 @@ msgstr "Skärmens ljusstyrka: %i"
 
 #: src/Indicator.vala:195
 msgid "Scroll to change screen brightness"
-msgstr "Bläddra för att ändra skärmens ljusstyrka"
+msgstr "Rulla för att ändra skärmens ljusstyrka"
 
 #: src/Services/Device.vala:65
 msgid "Battery"
@@ -43,11 +43,11 @@ msgstr "Batteri"
 
 #: src/Services/Device.vala:67
 msgid "UPS"
-msgstr "Avbrottsfri kraftförsörjning, (UPS)-enhet"
+msgstr "UPS"
 
 #: src/Services/Device.vala:69
 msgid "Display"
-msgstr "Skärm"
+msgstr "Bildskärm"
 
 #: src/Services/Device.vala:71
 msgid "Mouse"
@@ -79,7 +79,7 @@ msgstr "Dator"
 
 #: src/Services/Device.vala:85
 msgid "Controller"
-msgstr "Kontroller"
+msgstr "Handkontroller"
 
 #: src/Services/Device.vala:87
 msgid "Pen"
@@ -117,7 +117,7 @@ msgstr "Hög"
 #: src/Services/Device.vala:340
 msgctxt "battery-level"
 msgid "Full"
-msgstr "Full"
+msgstr "Fullt"
 
 #: src/Services/Device.vala:345
 msgid "Fully charged"
@@ -137,22 +137,22 @@ msgstr "%.0f%% återstår"
 #, c-format
 msgid "%lld hour until full"
 msgid_plural "%lld hours until full"
-msgstr[0] "%lld timme tills fulladdat"
-msgstr[1] "%lld timmar tills fulladdat"
+msgstr[0] "%lld timme tills fullt"
+msgstr[1] "%lld timmar tills fullt"
 
 #: src/Services/Device.vala:371
 #, c-format
 msgid "%lld minute until full"
 msgid_plural "%lld minutes until full"
-msgstr[0] "%lld minut tills fulladdat"
-msgstr[1] "%lld minuter tills fulladdat"
+msgstr[0] "%lld minut tills fullt"
+msgstr[1] "%lld minuter tills fullt"
 
 #: src/Services/Device.vala:378
 #, c-format
 msgid "%lld second until full"
 msgid_plural "%lld seconds until full"
-msgstr[0] "%lld sekund tills fulladdat"
-msgstr[1] "%lld sekunder tills fulladdat"
+msgstr[0] "%lld sekund tills fullt"
+msgstr[1] "%lld sekunder tills fullt"
 
 #: src/Services/Device.vala:389
 #, c-format
