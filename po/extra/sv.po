@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2025-10-22 09:58+0000\n"
+"PO-Revision-Date: 2025-10-31 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-power-extra/sv/>\n"
@@ -64,38 +64,37 @@ msgstr "Nya funktioner:"
 
 #: data/power.metainfo.xml.in:86
 msgid "Scroll horizontally on the panel icon to change display brightness"
-msgstr ""
-"Bläddra horisontellt på panelikonen för att ändra ljusstyrkan på skärmen"
+msgstr "Rulla horisontellt på panelikonen för att ändra ljusstyrkan på skärmen"
 
 #: data/power.metainfo.xml.in:90
 msgid "Do a better job hiding the brightness slider on unsupported displays"
 msgstr ""
-"Göra ett bättre jobb med att dölja ljusstyrkereglaget på skärmar som inte "
+"Gör ett bättre jobb med att dölja ljusstyrkereglaget på skärmar som inte "
 "stöds"
 
 #: data/power.metainfo.xml.in:104
 msgid "Show brightness level when scrolled"
-msgstr "Visa ljusstyrkan när du skrollar"
+msgstr "Visa ljusstyrkenivå vid rullning"
 
 #: data/power.metainfo.xml.in:105
 msgid "Show battery percentage automatically at 20% or lower"
-msgstr "Visa batteriprocent automatiskt vid 20% or lägre"
+msgstr "Visa batteriprocent automatiskt vid 20% eller lägre"
 
 #: data/power.metainfo.xml.in:109
 msgid "Match scroll direction with Sound indicator"
-msgstr "Matchande scrollriktning med ljudindikator"
+msgstr "Matcha rullriktning med ljudindikator"
 
 #: data/power.metainfo.xml.in:110
 msgid "Show \"Fully Charged\" at 100% when plugged in"
-msgstr "Visa \"Fullt laddad\" vid 100% när den är ansluten"
+msgstr "Visa \"Fullt laddat\" vid 100% när ansluten"
 
 #: data/power.metainfo.xml.in:120
 msgid "Show battery statistics when selected"
-msgstr "Visa batteristatistik när den är vald"
+msgstr "Visa batteristatistik när markerad"
 
 #: data/power.metainfo.xml.in:121
 msgid "Launch apps using power when selected"
-msgstr "Starta appar som använder ström när de väljs"
+msgstr "Starta appar som använder ström när markerad"
 
 #: data/power.metainfo.xml.in:122
 msgid "Control display brightness by scrolling the indicator"
