@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2025-12-06 19:55+0000\n"
-"Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
+"PO-Revision-Date: 2026-01-03 14:55+0000\n"
+"Last-Translator: Bas Ernst <50556177+ErnstBas@users.noreply.github.com>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-power-extra/nl/>\n"
 "Language: nl\n"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: data/power.metainfo.xml.in:63
 msgid "Drop inaccurate \"Apps using lots of power\" feature"
-msgstr ""
+msgstr "De onnauwkeurige functie \"Apps die veel stroom gebruiken\" verwijderen"
 
 #: data/power.metainfo.xml.in:84 data/power.metainfo.xml.in:102
 #: data/power.metainfo.xml.in:118
@@ -66,46 +66,50 @@ msgstr "Nieuwe functionaliteit:"
 #: data/power.metainfo.xml.in:86
 msgid "Scroll horizontally on the panel icon to change display brightness"
 msgstr ""
+"Schuif horizontaal over het paneelicoon om de helderheid van het scherm aan "
+"te passen"
 
 #: data/power.metainfo.xml.in:90
 msgid "Do a better job hiding the brightness slider on unsupported displays"
 msgstr ""
+"Verbeter het verbergen van de schuifregelaar voor de helderheid op niet-"
+"ondersteunde schermen"
 
 #: data/power.metainfo.xml.in:104
 msgid "Show brightness level when scrolled"
-msgstr ""
+msgstr "Toon het helderheidsniveau bij het schuiven"
 
 #: data/power.metainfo.xml.in:105
 msgid "Show battery percentage automatically at 20% or lower"
-msgstr ""
+msgstr "Toon het batterijpercentage automatisch als het 20% of lager is"
 
 #: data/power.metainfo.xml.in:109
 msgid "Match scroll direction with Sound indicator"
-msgstr ""
+msgstr "Stem de scrollrichting af op de geluidsindicator"
 
 #: data/power.metainfo.xml.in:110
 msgid "Show \"Fully Charged\" at 100% when plugged in"
-msgstr ""
+msgstr "Toon \"Volledig opgeladen\" bij 100% wanneer aangesloten"
 
 #: data/power.metainfo.xml.in:120
 msgid "Show battery statistics when selected"
-msgstr ""
+msgstr "Toon batterijstatistieken wanneer geselecteerd"
 
 #: data/power.metainfo.xml.in:121
 msgid "Launch apps using power when selected"
-msgstr ""
+msgstr "Start apps die stroom gebruiken wanneer geselecteerd"
 
 #: data/power.metainfo.xml.in:122
 msgid "Control display brightness by scrolling the indicator"
-msgstr ""
+msgstr "De helderheid van het scherm regelen door de indicator te verschuiven"
 
 #: data/power.metainfo.xml.in:126
 msgid "Improvements for desktops with peripherals"
-msgstr ""
+msgstr "Verbeteringen voor desktops met randapparaten"
 
 #: data/power.metainfo.xml.in:127
 msgid "Filter out internal devices"
-msgstr ""
+msgstr "Interne apparaten filteren"
 
 #: data/power.metainfo.xml.in:128
 msgid "Show tooltip on hover"
