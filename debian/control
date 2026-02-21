@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 10.5.1),
                libgtop2-dev,
                libnotify-dev,
                libudev-dev,
-               libwingpanel-8-dev,
+               libwingpanel-9-dev,
                meson,
                valac (>= 0.28)
 Standards-Version: 4.1.1
