@@ -9,7 +9,7 @@ You'll need the following dependencies:
 * libgranite-7-dev
 * libgtop2-dev
 * libudev-dev
-* libwingpanel-8-dev
+* libwingpanel-9-dev
 * libnotify-dev
 * meson >= 0.58.0
 * valac

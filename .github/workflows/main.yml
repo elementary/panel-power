@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           apt update
-          apt install -y libgranite-7-dev libgtop2-dev libudev-dev libwingpanel-8-dev libnotify-dev meson valac
+          apt install -y libgranite-7-dev libgtop2-dev libudev-dev libwingpanel-9-dev libnotify-dev meson valac
       - name: Build
         env:
           DESTDIR: out
