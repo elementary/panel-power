@@ -18,8 +18,8 @@
  */
 
 namespace Power.Services.DBusInterfaces {
-  [DBus (name = "org.gnome.SettingsDaemon.Power.Screen")]
-  interface PowerSettings : GLib.Object {
+  [DBus (name = "io.elementary.gala.BrightnessManager")]
+  interface BrightnessManager : GLib.Object {
     public abstract int brightness { get; set; }
   }
 }

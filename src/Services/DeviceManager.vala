@@ -21,13 +21,13 @@ public class Power.Services.DeviceManager : Object {
     private const string UPOWER_INTERFACE = "org.freedesktop.UPower";
     private const string UPOWER_PATH = "/org/freedesktop/UPower";
 
-    private const string POWER_SETTINGS_INTERFACE = "org.gnome.SettingsDaemon.Power";
-    private const string POWER_SETTINGS_PATH = "/org/gnome/SettingsDaemon/Power";
+    private const string GALA_INTERFACE = "io.elementary.gala";
+    private const string GALA_PATH = "/io/elementary/gala/BrightnessManager";
 
     private static DeviceManager? instance = null;
 
     private DBusInterfaces.UPower? upower = null;
-    private DBusInterfaces.PowerSettings? iscreen = null;
+    private DBusInterfaces.BrightnessManager? iscreen = null;
 
     public Services.Backlight backlight { get; construct; }
     public Gee.HashMap<string, Device> devices { get; private set; }
@@ -92,8 +92,8 @@ public class Power.Services.DeviceManager : Object {
 
             iscreen = yield Bus.get_proxy (
                 BusType.SESSION,
-                POWER_SETTINGS_INTERFACE,
-                POWER_SETTINGS_PATH,
+                GALA_INTERFACE,
+                GALA_PATH,
                 DBusProxyFlags.GET_INVALIDATED_PROPERTIES
             );
             debug ("Connection to Power Settings bus established");
