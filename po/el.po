@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2026-06-29 09:56+0000\n"
+"PO-Revision-Date: 2026-07-25 20:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/wingpanel/power/"
 "el/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 #: src/Indicator.vala:194
 #, c-format
 msgid "Screen brightness: %i"
-msgstr ""
+msgstr "Φωτεινότητα οθόνης: %i"
 
 #: src/Indicator.vala:195
 msgid "Scroll to change screen brightness"
