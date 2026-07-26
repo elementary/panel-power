@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/io/elementary/desktop/wingpanel/power">
+  <gresource prefix="/io/elementary/panel/power">
     <file alias="scalable/categories/power-mode-balanced-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/balanced.svg</file>
     <file alias="scalable/categories/power-mode-performance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/performance.svg</file>
     <file alias="scalable/categories/power-mode-powersaver-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/powersaver.svg</file>

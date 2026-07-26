@@ -18,7 +18,7 @@
  */
 
 public class Power.Widgets.DisplayWidget : Gtk.Box {
-    private static Settings settings = new GLib.Settings ("io.elementary.desktop.wingpanel.power");
+    private static Settings settings = new GLib.Settings ("io.elementary.panel.power");
 
     private Gtk.Revealer percent_revealer;
     public string icon_name {
