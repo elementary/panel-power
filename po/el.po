@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2026-07-25 20:01+0000\n"
+"PO-Revision-Date: 2026-07-27 10:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/wingpanel/power/"
 "el/>\n"
@@ -22,11 +22,11 @@ msgstr "%s: %s"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to hide percentage"
-msgstr ""
+msgstr "Μεσαίο κλικ για απόκρυψη ποσοστού"
 
 #: src/Indicator.vala:186
 msgid "Middle-click to show percentage"
-msgstr ""
+msgstr "Μεσαίο κλικ για εμφάνιση ποσοστού"
 
 #: src/Indicator.vala:194
 #, c-format
