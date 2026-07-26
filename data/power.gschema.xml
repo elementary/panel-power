@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-	<schema path="/io/elementary/panel/power/" id="io.elementary.panel.power">
-		<key type="b" name="show-percentage">
-			<default>false</default>
-			<summary>Sets if the percentage of the primary battery is shown in the panel.</summary>
-			<description>Enable this to see the percentage of the battery directly in the panel without having to click onto the power-indicator.</description>
-		</key>
-	</schema>
+  <schema path="/io/elementary/panel/power/" id="io.elementary.panel.power">
+    <key type="b" name="show-percentage">
+      <default>false</default>
+      <summary>Sets if the percentage of the primary battery is shown in the panel.</summary>
+      <description>Enable this to see the percentage of the battery directly in the panel without having to click onto the power-indicator.</description>
+    </key>
+  </schema>
 </schemalist>

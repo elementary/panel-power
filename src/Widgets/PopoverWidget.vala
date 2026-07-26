@@ -35,7 +35,7 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
     }
 
     construct {
-        var settings = new GLib.Settings ("io.elementary.desktop.wingpanel.power");
+        var settings = new GLib.Settings ("io.elementary.panel.power");
 
         var device_list = new DeviceList ();
 
