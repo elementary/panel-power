@@ -43,7 +43,7 @@ public class Power.Indicator : Wingpanel.Indicator {
     construct {
         GLib.Intl.bindtextdomain (Constants.GETTEXT_PACKAGE, Constants.LOCALEDIR);
         GLib.Intl.bind_textdomain_codeset (Constants.GETTEXT_PACKAGE, "UTF-8");
-        Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/io/elementary/desktop/wingpanel/power");
+        Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/io/elementary/panel/power");
 
         dm = Power.Services.DeviceManager.get_default ();
 

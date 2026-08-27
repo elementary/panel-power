@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-09 18:50+0000\n"
-"PO-Revision-Date: 2026-06-29 09:56+0000\n"
+"PO-Revision-Date: 2026-07-25 20:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-power-extra/el/>\n"
@@ -58,7 +58,7 @@ msgstr ""
 #: data/power.metainfo.xml.in:84 data/power.metainfo.xml.in:102
 #: data/power.metainfo.xml.in:118
 msgid "New features:"
-msgstr ""
+msgstr "Νέες λειτουργίες:"
 
 #: data/power.metainfo.xml.in:86
 msgid "Scroll horizontally on the panel icon to change display brightness"
