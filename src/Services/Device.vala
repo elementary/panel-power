@@ -265,7 +265,7 @@ public class Power.Services.Device : Object {
 
     public string get_icon_name_for_battery () {
         if (!is_a_battery) {
-            return "preferences-system-power-symbolic";
+            return "panel-power-symbolic";
         }
         if (percentage == 100 && is_charging) {
             return "battery-full-charged";

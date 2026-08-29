@@ -5,6 +5,9 @@
     <file alias="scalable/categories/power-mode-performance-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/performance.svg</file>
     <file alias="scalable/categories/power-mode-powersaver-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/powersaver.svg</file>
 
+    <file alias="24x24/status/panel-power-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/power.svg</file>
+    <file alias="24x24@2/status/panel-power-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/power.svg</file>
+
     <file alias="24x24/status/battery-100-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/battery-100.svg</file>
     <file alias="24x24/status/battery-95-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/battery-95.svg</file>
     <file alias="24x24/status/battery-90-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/battery-90.svg</file>
