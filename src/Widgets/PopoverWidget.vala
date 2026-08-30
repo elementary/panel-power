@@ -58,7 +58,7 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
         };
 
         var last_separator_revealer = new Gtk.Revealer () {
-            reveal_child = dm.brightness != -1,
+            reveal_child = dm.get_monitor_count () > 0,
             child = last_separator,
         };
 
@@ -137,8 +137,8 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
             }
         });
 
-        dm.brightness_changed.connect ((brightness) => {
-            if (brightness != -1) {
+        dm.monitors_changed.connect (() => {
+            if (dm.get_monitor_count () > 0) {
                 last_separator_revealer.reveal_child = true;
             } else {
                 last_separator_revealer.reveal_child = false;

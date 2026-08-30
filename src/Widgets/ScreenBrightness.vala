@@ -18,8 +18,8 @@
  */
 
 public class Power.Widgets.ScreenBrightness : Granite.Bin {
-    private Gtk.Scale brightness_slider;
     private Power.Services.DeviceManager dm;
+    private Gtk.ListBox list_box;
 
     public bool natural_scroll_touchpad { get; set; }
     public bool natural_scroll_mouse { get; set; }
@@ -32,54 +32,80 @@ public class Power.Widgets.ScreenBrightness : Granite.Bin {
         var touchpad_settings = new GLib.Settings ("org.gnome.desktop.peripherals.touchpad");
         touchpad_settings.bind ("natural-scroll", this, "natural-scroll-touchpad", SettingsBindFlags.DEFAULT);
 
+        var scroll_controller = new Gtk.EventControllerScroll (BOTH_AXES);
+        scroll_controller.scroll.connect (on_scroll);
+        add_controller (scroll_controller);
+
+        list_box = new Gtk.ListBox ();
+        child = list_box;
+
+        populate_list ();
+
+        dm.monitors_changed.connect (() => {
+            list_box.remove_all ();
+            populate_list ();
+        });
+    }
+
+    private void populate_list () {
+        for (int i = 0; i < dm.get_monitor_count (); i++) {
+            list_box.append (construct_row (i));
+        }
+    }
+
+    private Gtk.Widget construct_row (int index) {
         var image = new Gtk.Image.from_icon_name ("brightness-display-symbolic") {
             pixel_size = 48
         };
 
-        brightness_slider = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 100, 10) {
-            margin_end = 6,
+        var monitor_label = new Gtk.Label (dm.get_monitor_data (index)) {
+            halign = Gtk.Align.START
+        };
+
+        var brightness_slider = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 1, 0.1) {
+            margin_start = 2,
+            margin_end = 2,
             hexpand = true,
             draw_value = false,
             width_request = 175
         };
 
-        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+        var slider_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 2) {
+            hexpand = true,
+            vexpand = true,
+            homogeneous = true
+        };
+
+        slider_box.append (monitor_label);
+        slider_box.append (brightness_slider);
+
+        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 4) {
             hexpand = true,
             margin_start = 6,
             margin_end = 12
         };
 
         box.append (image);
-        box.append (brightness_slider);
+        box.append (slider_box);
 
-        var show_brightness_slider = new Gtk.Revealer () {
-            child = box
-        };
-
-        child = show_brightness_slider;
-
-        if (dm.brightness != -1) {
-            brightness_slider.set_value (dm.brightness);
-            show_brightness_slider.reveal_child = true;
-        }
-
-        var scroll_controller = new Gtk.EventControllerScroll (BOTH_AXES);
-        scroll_controller.scroll.connect (on_scroll);
-        add_controller (scroll_controller);
-
-        brightness_slider.value_changed.connect ((value) => {
-            brightness_slider.set_value (value.get_value ());
-            dm.brightness = (int) value.get_value ();
+        ulong slider_signal = 0, dm_signal = 0;
+        slider_signal = brightness_slider.value_changed.connect ((value) => {
+            SignalHandler.block (dm, dm_signal);
+            dm.set_monitor_brightness (index, value.get_value ());
+            SignalHandler.unblock (dm, dm_signal);
         });
-
-        dm.brightness_changed.connect ((brightness) => {
-            if (brightness != -1) {
-                brightness_slider.set_value ((double) brightness);
-                show_brightness_slider.reveal_child = true;
-            } else {
-                show_brightness_slider.reveal_child = false;
+        dm_signal = dm.monitor_brightness_changed.connect ((ch_index, value) => {
+            if (index != ch_index) {
+                return;
             }
+
+            SignalHandler.block (brightness_slider, slider_signal);
+            brightness_slider.set_value (value);
+            SignalHandler.unblock (brightness_slider, slider_signal);
         });
+
+        brightness_slider.set_value (dm.get_monitor_brightness (index));
+        return box;
     }
 
     private bool on_scroll (Gtk.EventControllerScroll controller, double dx, double dy) {
