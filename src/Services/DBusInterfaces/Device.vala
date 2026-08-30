@@ -42,32 +42,32 @@ namespace Power.Services.DBusInterfaces {
         public abstract StatisticsDataPoint[] get_statistics (string type) throws GLib.Error;
         public abstract void refresh () throws GLib.Error;
 
-        public abstract bool has_history { public owned get; public set; }
-        public abstract bool has_statistics { public owned get; public set; }
-        public abstract bool is_present { public owned get; public set; }
-        public abstract bool is_rechargeable { public owned get; public set; }
-        public abstract bool online { public owned get; public set; }
-        public abstract bool power_supply { public owned get; public set; }
-        public abstract double capacity { public owned get; public set; }
-        public abstract double energy { public owned get; public set; }
-        public abstract double energy_empty { public owned get; public set; }
-        public abstract double energy_full { public owned get; public set; }
-        public abstract double energy_full_design { public owned get; public set; }
-        public abstract double energy_rate { public owned get; public set; }
-        public abstract double luminosity { public owned get; public set; }
-        public abstract double percentage { public owned get; public set; }
-        public abstract double temperature { public owned get; public set; }
-        public abstract double voltage { public owned get; public set; }
-        public abstract int64 time_to_empty { public owned get; public set; }
-        public abstract int64 time_to_full { public owned get; public set; }
+        public abstract bool has_history { public get; public set; }
+        public abstract bool has_statistics { public get; public set; }
+        public abstract bool is_present { public get; public set; }
+        public abstract bool is_rechargeable { public get; public set; }
+        public abstract bool online { public get; public set; }
+        public abstract bool power_supply { public get; public set; }
+        public abstract double capacity { public get; public set; }
+        public abstract double energy { public get; public set; }
+        public abstract double energy_empty { public get; public set; }
+        public abstract double energy_full { public get; public set; }
+        public abstract double energy_full_design { public get; public set; }
+        public abstract double energy_rate { public get; public set; }
+        public abstract double luminosity { public get; public set; }
+        public abstract double percentage { public get; public set; }
+        public abstract double temperature { public get; public set; }
+        public abstract double voltage { public get; public set; }
+        public abstract int64 time_to_empty { public get; public set; }
+        public abstract int64 time_to_full { public get; public set; }
         public abstract string model { public owned get; public set; }
         public abstract string native_path { public owned get; public set; }
         public abstract string serial { public owned get; public set; }
         public abstract string vendor { public owned get; public set; }
-        public abstract uint32 battery_level { owned get; }
-        public abstract uint32 state { public owned get; public set; }
-        public abstract uint32 technology { public owned get; public set; }
-        public abstract uint32 Type { public owned get; public set; }
-        public abstract uint64 update_time { public owned get; public set; }
+        public abstract uint32 battery_level { get; }
+        public abstract uint32 state { public get; public set; }
+        public abstract uint32 technology { public get; public set; }
+        public abstract uint32 Type { public get; public set; }
+        public abstract uint64 update_time { public get; public set; }
     }
 }
