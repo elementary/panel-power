@@ -56,7 +56,7 @@ namespace Power.Services.DBusInterfaces {
         public abstract double energy_rate { public get; public set; }
         public abstract double luminosity { public get; public set; }
         public abstract double percentage { public get; public set; }
-        public abstract double temperature { public  get; public set; }
+        public abstract double temperature { public get; public set; }
         public abstract double voltage { public get; public set; }
         public abstract int64 time_to_empty { public get; public set; }
         public abstract int64 time_to_full { public get; public set; }
