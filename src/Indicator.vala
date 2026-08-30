@@ -87,7 +87,7 @@ public class Power.Indicator : Wingpanel.Indicator {
                 });
                 display_widget.add_controller (scroll_controller);
 
-                dm.brightness_changed.connect (update_tooltip);
+                dm.monitor_brightness_changed.connect (update_tooltip);
             }
         }
 
@@ -191,7 +191,7 @@ public class Power.Indicator : Wingpanel.Indicator {
         }
 
         if (primary_text == null && dm.backlight.present) {
-            primary_text = _("Screen brightness: %i").printf ((int)(dm.brightness));
+            primary_text = _("Screen brightness: %i").printf ((int)(dm.get_monitor_brightness (0)));
             secondary_text = _("Scroll to change screen brightness");
         }
 
@@ -211,7 +211,7 @@ public class Power.Indicator : Wingpanel.Indicator {
         if (is_in_session) {
             var notification = new Notify.Notification ("indicator-power", "", "display-brightness-symbolic");
             notification.set_hint ("x-canonical-private-synchronous", new Variant.string ("indicator-power"));
-            notification.set_hint ("value", new Variant.int32 (dm.brightness));
+            notification.set_hint ("value", new Variant.int32 ((int) (dm.get_monitor_brightness (0) * 100)));
             try {
                 notification.show ();
                 return true;

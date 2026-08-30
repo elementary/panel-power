@@ -1,6 +1,6 @@
 public class Power.Utils {
 
-    private const double BRIGHTNESS_STEP = 5.0;
+    private const double BRIGHTNESS_STEP = 0.005;
     private static double total_y_delta = 0;
     private static double total_x_delta = 0;
 
@@ -54,9 +54,9 @@ public class Power.Utils {
                 break;
         }
 
-        if (total_y_delta.abs () * BRIGHTNESS_STEP > 1.0) {
+        if (total_y_delta.abs () * BRIGHTNESS_STEP > 0.001) {
             dir = natural_scroll ? total_y_delta : -total_y_delta;
-        } else if (total_x_delta.abs () * BRIGHTNESS_STEP > 1.0) {
+        } else if (total_x_delta.abs () * BRIGHTNESS_STEP > 0.001) {
             dir = natural_scroll ? -total_x_delta : total_x_delta;
         }
 
@@ -64,7 +64,7 @@ public class Power.Utils {
             total_y_delta = 0.0;
             total_x_delta = 0.0;
             Power.Services.DeviceManager.get_default ()
-                .change_brightness ((int) Math.round (dir * BRIGHTNESS_STEP));
+                .change_global_brightness (dir * BRIGHTNESS_STEP);
         }
 
         return Gdk.EVENT_STOP;
