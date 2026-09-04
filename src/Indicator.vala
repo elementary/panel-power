@@ -32,6 +32,8 @@ public class Power.Indicator : Wingpanel.Indicator {
 
     private Settings settings;
 
+    private bool open = false;
+
     public Indicator (bool is_in_session) {
         Object (
             code_name : Wingpanel.Indicator.POWER,
@@ -48,6 +50,38 @@ public class Power.Indicator : Wingpanel.Indicator {
         brightness_manager = Services.BrightnessManager.get_default ();
 
         settings = new GLib.Settings ("io.elementary.panel.power");
+
+        var brightness_up = new Wingpanel.KeybindingHelper.SignalAction ();
+        brightness_up.activated.connect (global_brightness_up);
+
+        var brightness_down = new Wingpanel.KeybindingHelper.SignalAction ();
+        brightness_down.activated.connect (global_brightness_down);
+
+        var helper = Wingpanel.KeybindingHelper.get_default ();
+        helper.add_keybinding ("brightness-up", settings, brightness_up);
+        helper.add_keybinding ("brightness-down", settings, brightness_down);
+    }
+
+    private void global_brightness_up () {
+        brightness_manager.set_global_brightness (brightness_manager.get_global_brightness () + 0.1);
+        maybe_show_brightness_osd (brightness_manager.get_global_brightness ());
+    }
+
+    private void global_brightness_down () {
+        brightness_manager.set_global_brightness (brightness_manager.get_global_brightness () - 0.1);
+        maybe_show_brightness_osd (brightness_manager.get_global_brightness ());
+    }
+
+    private void maybe_show_brightness_osd (double value) {
+        if (open) {
+            return;
+        }
+
+        var parameters = new HashTable<string, Variant> (str_hash, str_equal);
+        parameters["icon"] = new Variant.string ("display-brightness-symbolic");
+        parameters["level"] = new Variant.double (value);
+
+        Wingpanel.KeybindingHelper.get_default ().show_osd (parameters);
     }
 
     public override Gtk.Widget get_display_widget () {
@@ -77,10 +111,12 @@ public class Power.Indicator : Wingpanel.Indicator {
         return popover_widget;
     }
 
-    public override void opened () { }
+    public override void opened () {
+        open = true;
+    }
 
     public override void closed () {
-
+        open = false;
     }
 
     private void update_visibility () {
