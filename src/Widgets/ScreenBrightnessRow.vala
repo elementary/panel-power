@@ -34,6 +34,8 @@ public class Power.Widgets.ScreenBrightenssRow : Granite.Bin {
         };
 
         var monitor_label = new Gtk.Label (brightness_manager.get_monitor_name (index)) {
+            margin_start = 2,
+            margin_top = 2,
             halign = Gtk.Align.START
         };
 

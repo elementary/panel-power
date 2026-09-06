@@ -27,7 +27,9 @@ public class Power.Widgets.ScreenBrightnessList : Granite.Bin {
     construct {
         brightness_manager = Power.Services.BrightnessManager.get_default ();
 
-        list_box = new Gtk.ListBox ();
+        list_box = new Gtk.ListBox () {
+            selection_mode = Gtk.SelectionMode.NONE
+        };
         child = list_box;
 
         populate_list ();
@@ -40,6 +42,12 @@ public class Power.Widgets.ScreenBrightnessList : Granite.Bin {
 
     private void populate_list () {
         for (int i = 0; i < brightness_manager.get_n_monitors (); i++) {
+            if (i != 0) {
+                list_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+                    margin_top = 3,
+                    margin_bottom = 3
+                });
+            }
             list_box.append (new ScreenBrightenssRow (i));
         }
     }
