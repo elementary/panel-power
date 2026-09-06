@@ -1,31 +1,24 @@
 /*
- * Copyright 2011-2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2026 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public
- * License as published by the Free Software Foundation; either
- * version 2 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
- *
- * You should have received a copy of the GNU General Public
- * License along with this program; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin Street - Fifth Floor,
- * Boston, MA 02110-1301, USA.
+ * Authored by: Denis Garaev <garaevdi@outlook.com>
  */
 
-public class Power.Widgets.ScreenBrightness : Granite.Bin {
-    private Power.Services.DeviceManager dm;
-    private Gtk.ListBox list_box;
+public class Power.Widgets.ScreenBrightenssRow : Granite.Bin {
+    private Services.BrightnessManager brightness_manager;
+
+    public int index { get; construct; }
 
     public bool natural_scroll_touchpad { get; set; }
     public bool natural_scroll_mouse { get; set; }
 
+    public ScreenBrightenssRow (int index) {
+        Object (index: index);
+    }
+
     construct {
-        dm = Power.Services.DeviceManager.get_default ();
+        brightness_manager = Services.BrightnessManager.get_default ();
 
         var mouse_settings = new GLib.Settings ("org.gnome.desktop.peripherals.mouse");
         mouse_settings.bind ("natural-scroll", this, "natural-scroll-mouse", SettingsBindFlags.DEFAULT);
@@ -36,31 +29,17 @@ public class Power.Widgets.ScreenBrightness : Granite.Bin {
         scroll_controller.scroll.connect (on_scroll);
         add_controller (scroll_controller);
 
-        list_box = new Gtk.ListBox ();
-        child = list_box;
-
-        populate_list ();
-
-        dm.monitors_changed.connect (() => {
-            list_box.remove_all ();
-            populate_list ();
-        });
-    }
-
-    private void populate_list () {
-        for (int i = 0; i < dm.get_monitor_count (); i++) {
-            list_box.append (construct_row (i));
-        }
-    }
-
-    private Gtk.Widget construct_row (int index) {
         var image = new Gtk.Image.from_icon_name ("brightness-display-symbolic") {
             pixel_size = 48
         };
 
-        var monitor_label = new Gtk.Label (dm.get_monitor_data (index)) {
+        var monitor_label = new Gtk.Label (brightness_manager.get_monitor_name (index)) {
             halign = Gtk.Align.START
         };
+
+        if (index == 0) {
+            monitor_label.set_text (monitor_label.get_text () + _(" (Primary)"));
+        }
 
         var brightness_slider = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 1, 0.1) {
             margin_start = 2,
@@ -88,13 +67,15 @@ public class Power.Widgets.ScreenBrightness : Granite.Bin {
         box.append (image);
         box.append (slider_box);
 
+        child = box;
+
         ulong slider_signal = 0, dm_signal = 0;
         slider_signal = brightness_slider.value_changed.connect ((value) => {
-            SignalHandler.block (dm, dm_signal);
-            dm.set_monitor_brightness (index, value.get_value ());
-            SignalHandler.unblock (dm, dm_signal);
+            SignalHandler.block (brightness_manager, dm_signal);
+            brightness_manager.set_monitor_brightness (index, value.get_value ());
+            SignalHandler.unblock (brightness_manager, dm_signal);
         });
-        dm_signal = dm.monitor_brightness_changed.connect ((ch_index, value) => {
+        dm_signal = brightness_manager.monitor_brightness_changed.connect ((ch_index, value) => {
             if (index != ch_index) {
                 return;
             }
@@ -104,11 +85,10 @@ public class Power.Widgets.ScreenBrightness : Granite.Bin {
             SignalHandler.unblock (brightness_slider, slider_signal);
         });
 
-        brightness_slider.set_value (dm.get_monitor_brightness (index));
-        return box;
+        brightness_slider.set_value (brightness_manager.get_monitor_brightness (index));
     }
 
     private bool on_scroll (Gtk.EventControllerScroll controller, double dx, double dy) {
-        return Utils.handle_scroll_event ((Gdk.ScrollEvent) controller.get_current_event (), natural_scroll_mouse, natural_scroll_touchpad);
+        return Utils.handle_local_scroll_event ((Gdk.ScrollEvent) controller.get_current_event (), natural_scroll_mouse, natural_scroll_touchpad, index);
     }
 }

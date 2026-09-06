@@ -19,7 +19,7 @@
 
 namespace Power.Services.DBusInterfaces {
   [DBus (name = "io.elementary.gala.BrightnessManager")]
-  interface BrightnessManager : GLib.Object {
+  interface GalaBrightnessManager : GLib.Object {
     public signal void monitors_changed ();
     public signal void monitor_brightness_changed (int index, double value);
 

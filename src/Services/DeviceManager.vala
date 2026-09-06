@@ -20,16 +20,10 @@
 public class Power.Services.DeviceManager : Object {
     private const string UPOWER_INTERFACE = "org.freedesktop.UPower";
     private const string UPOWER_PATH = "/org/freedesktop/UPower";
-
-    private const string GALA_INTERFACE = "io.elementary.gala";
-    private const string GALA_PATH = "/io/elementary/gala/BrightnessManager";
-
     private static DeviceManager? instance = null;
 
     private DBusInterfaces.UPower? upower = null;
-    private DBusInterfaces.BrightnessManager? brightness_manager = null;
 
-    public Services.Backlight backlight { get; construct; }
     public Gee.HashMap<string, Device> devices { get; private set; }
     public Gee.Iterator batteries { get; private set; }
     public Device display_device { get; private set; }
@@ -40,12 +34,7 @@ public class Power.Services.DeviceManager : Object {
     public signal void battery_registered (string device_path, Device battery);
     public signal void battery_deregistered (string device_path);
 
-    public signal void monitors_changed ();
-    public signal void monitor_brightness_changed (int index, double value);
-
     construct {
-        backlight = new Services.Backlight ();
-
         connect_to_bus.begin ((obj, res) => {
             if (connect_to_bus.end (res)) {
                 update_properties ();
@@ -77,17 +66,9 @@ public class Power.Services.DeviceManager : Object {
             );
             debug ("Connection to UPower bus established");
 
-            brightness_manager = yield Bus.get_proxy (
-                BusType.SESSION,
-                GALA_INTERFACE,
-                GALA_PATH,
-                DBusProxyFlags.GET_INVALIDATED_PROPERTIES
-            );
-            debug ("Connection to Power Settings bus established");
-
             return true;
         } catch (Error e) {
-            critical ("Connecting to UPower or PowerSettings bus failed: %s", e.message);
+            critical ("Connecting to UPower bus failed: %s", e.message);
 
             return false;
         }
@@ -126,7 +107,7 @@ public class Power.Services.DeviceManager : Object {
         }
     }
 
-    private void connect_signals () requires (upower != null && brightness_manager != null) {
+    private void connect_signals () requires (upower != null) {
         upower.g_properties_changed.connect (() => {
             update_properties ();
             update_batteries ();
@@ -134,9 +115,6 @@ public class Power.Services.DeviceManager : Object {
 
         upower.DeviceAdded.connect (register_device);
         upower.DeviceRemoved.connect (deregister_device);
-
-        brightness_manager.monitors_changed.connect (monitors_changed_cb);
-        brightness_manager.monitor_brightness_changed.connect (monitor_brightness_changed_cb);
     }
 
     private void update_properties () requires (upower != null) {
@@ -180,65 +158,6 @@ public class Power.Services.DeviceManager : Object {
 
         if (device.is_a_battery) {
             battery_deregistered (device_path);
-        }
-    }
-
-    private void monitors_changed_cb () {
-        monitors_changed ();
-    }
-
-    private void monitor_brightness_changed_cb (int index, double value) {
-        monitor_brightness_changed (index, value);
-    }
-
-    public double get_monitor_brightness (int index) {
-        if (brightness_manager != null) {
-            try {
-                return brightness_manager.get_monitor_brightness (index);
-            } catch (Error e) {
-                warning ("Couldn't get monitor's brightness: %s", e.message);
-            }
-        }
-        return -1;
-    }
-
-    public void set_monitor_brightness (int index, double value) {
-        if (brightness_manager != null) {
-            try {
-                brightness_manager.set_monitor_brightness (index, value);
-            } catch (Error e) {
-                warning ("Couldn't set monitor's brightness: %s", e.message);
-            }
-        }
-    }
-
-    public string get_monitor_data (int index) {
-        if (brightness_manager != null) {
-            try {
-                return brightness_manager.get_monitor_name (index);
-            } catch (Error e) {
-                warning ("Couldn't get monitor's data: %s", e.message);
-            }
-        }
-        return "";
-    }
-
-    public int get_monitor_count () {
-        if (brightness_manager != null) {
-            try {
-                return brightness_manager.get_n_monitors ();
-            } catch (Error e) {
-                warning ("Couldn't get monitor's count: %s", e.message);
-            }
-        }
-        return 0;
-    }
-
-    public void change_global_brightness (double change) {
-        try {
-            brightness_manager.set_global_brightness ((brightness_manager.get_global_brightness () + change).clamp (0.0, 1.0));
-        } catch (Error e) {
-            warning ("Couldn't set global brightness: %s", e.message);
         }
     }
 }
