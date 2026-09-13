@@ -21,6 +21,7 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
     public bool is_in_session { get; construct; default = false; }
 
     private static Services.DeviceManager dm;
+    private static Services.BrightnessManager brightness_manager;
 
     private Gtk.Revealer device_separator_revealer;
 
@@ -32,6 +33,7 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
 
     static construct {
         dm = Services.DeviceManager.get_default ();
+        brightness_manager = Services.BrightnessManager.get_default ();
     }
 
     construct {
@@ -58,7 +60,7 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
         };
 
         var last_separator_revealer = new Gtk.Revealer () {
-            reveal_child = dm.brightness != -1,
+            reveal_child = brightness_manager.present,
             child = last_separator,
         };
 
@@ -95,8 +97,8 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
         append (device_list_revealer);
         append (device_separator_revealer);
 
-        if (dm.backlight.present) {
-            var screen_brightness = new ScreenBrightness ();
+        if (brightness_manager.present) {
+            var screen_brightness = new ScreenBrightnessList ();
             append (screen_brightness);
         }
 
@@ -137,8 +139,8 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
             }
         });
 
-        dm.brightness_changed.connect ((brightness) => {
-            if (brightness != -1) {
+        brightness_manager.monitors_changed.connect (() => {
+            if (brightness_manager.present) {
                 last_separator_revealer.reveal_child = true;
             } else {
                 last_separator_revealer.reveal_child = false;
@@ -147,6 +149,6 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void update_device_separator_revealer () {
-        device_separator_revealer.reveal_child = dm.backlight.present && dm.has_battery;
+        device_separator_revealer.reveal_child = brightness_manager.present && dm.has_battery;
     }
 }

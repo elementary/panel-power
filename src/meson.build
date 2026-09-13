@@ -14,10 +14,10 @@ config_in = configure_file(
 files = files(
     'Indicator.vala',
     'Utils.vala',
-    'Services/Backlight/Backlight.vala',
+    'Services/BrightnessManager.vala',
+    'Services/DBusInterfaces/GalaBrightnessManager.vala',
     'Services/DBusInterfaces/Device.vala',
     'Services/DBusInterfaces/Properties.vala',
-    'Services/DBusInterfaces/Screen.vala',
     'Services/DBusInterfaces/UPower.vala',
     'Services/DBusInterfaces/PowerProfile.vala',
     'Services/Device.vala',
@@ -26,7 +26,8 @@ files = files(
     'Widgets/DeviceRow.vala',
     'Widgets/DisplayWidget.vala',
     'Widgets/PopoverWidget.vala',
-    'Widgets/ScreenBrightness.vala',
+    'Widgets/ScreenBrightnessList.vala',
+    'Widgets/ScreenBrightnessRow.vala',
     'Widgets/PowerModeList.vala'
 )
 
