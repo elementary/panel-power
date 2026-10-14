@@ -3,8 +3,6 @@ public class Power.Utils {
     private const double BRIGHTNESS_STEP = 0.005;
     private static double total_y_delta = 0;
     private static double total_x_delta = 0;
-    private static GLib.Settings mouse_settings = new GLib.Settings ("org.gnome.desktop.peripherals.mouse");
-    private static GLib.Settings touchpad_settings = new GLib.Settings ("org.gnome.desktop.peripherals.touchpad");
 
     public static bool handle_global_scroll_event (Gdk.ScrollEvent e) {
         var bm = Power.Services.BrightnessManager.get_default ();
@@ -47,6 +45,8 @@ public class Power.Utils {
         var dir = 0.0;
         bool natural_scroll;
         var event_device = e.get_device ();
+        var mouse_settings = new GLib.Settings ("org.gnome.desktop.peripherals.mouse");
+        var touchpad_settings = new GLib.Settings ("org.gnome.desktop.peripherals.touchpad");
 
         if (event_device.source == Gdk.InputSource.MOUSE) {
             natural_scroll = mouse_settings.get_boolean ("natural-scroll");
