@@ -21,8 +21,6 @@ public class Power.Indicator : Wingpanel.Indicator {
     private const double LOW_BATTERY_PERCENTAGE = 20.0;
 
     public bool is_in_session { get; construct; default = false; }
-    public bool natural_scroll_touchpad { get; set; }
-    public bool natural_scroll_mouse { get; set; }
 
     private Widgets.DisplayWidget? display_widget = null;
 
@@ -30,6 +28,7 @@ public class Power.Indicator : Wingpanel.Indicator {
 
     private Services.Device? display_device = null;
     private Services.DeviceManager dm;
+    private Services.BrightnessManager brightness_manager;
 
     private Settings settings;
 
@@ -46,11 +45,7 @@ public class Power.Indicator : Wingpanel.Indicator {
         Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/io/elementary/panel/power");
 
         dm = Power.Services.DeviceManager.get_default ();
-
-        var mouse_settings = new GLib.Settings ("org.gnome.desktop.peripherals.mouse");
-        mouse_settings.bind ("natural-scroll", this, "natural-scroll-mouse", SettingsBindFlags.DEFAULT);
-        var touchpad_settings = new GLib.Settings ("org.gnome.desktop.peripherals.touchpad");
-        touchpad_settings.bind ("natural-scroll", this, "natural-scroll-touchpad", SettingsBindFlags.DEFAULT);
+        brightness_manager = Services.BrightnessManager.get_default ();
 
         settings = new GLib.Settings ("io.elementary.panel.power");
     }
@@ -60,35 +55,15 @@ public class Power.Indicator : Wingpanel.Indicator {
             display_widget = new Widgets.DisplayWidget ();
 
             /* No need to display the indicator when the device is completely in AC mode */
-            if (dm.has_battery || dm.backlight.present) {
+            if (dm.has_battery || brightness_manager.has_monitors) {
                 update_visibility ();
             }
 
+            setup_scroll_controller ();
             dm.notify["has-battery"].connect (update_visibility);
             dm.notify["display-device"].connect (update_display_device);
+            brightness_manager.notify["has-monitors"].connect (update_visibility);
             settings.changed["show-percentage"].connect (update_tooltip);
-
-            if (dm.backlight.present) {
-                var scroll_controller = new Gtk.EventControllerScroll (BOTH_AXES);
-                scroll_controller.scroll.connect ((controller, dx, dy) => {
-                    if (Utils.handle_scroll_event (
-                            (Gdk.ScrollEvent) controller.get_current_event (),
-                            natural_scroll_mouse,
-                            natural_scroll_touchpad)
-                    ) {
-                        if (popover_widget == null || !popover_widget.is_visible ()) {
-                          show_notification ();
-                        }
-
-                        return true;
-                    }
-
-                    return false;
-                });
-                display_widget.add_controller (scroll_controller);
-
-                dm.brightness_changed.connect (update_tooltip);
-            }
         }
 
         return display_widget;
@@ -111,7 +86,7 @@ public class Power.Indicator : Wingpanel.Indicator {
     private void update_visibility () {
         var dm = Services.DeviceManager.get_default ();
 
-        bool should_be_visible = (dm.has_battery || dm.backlight.present);
+        bool should_be_visible = (dm.has_battery || brightness_manager.has_monitors);
         if (visible != should_be_visible) {
             /* NOTE: popover closes every time you set visibility, so change property only when needed */
             visible = should_be_visible;
@@ -190,8 +165,8 @@ public class Power.Indicator : Wingpanel.Indicator {
             }
         }
 
-        if (primary_text == null && dm.backlight.present) {
-            primary_text = _("Screen brightness: %i").printf ((int)(dm.brightness));
+        if (primary_text == null && brightness_manager.has_monitors) {
+            primary_text = _("Screen brightness: %i").printf ((int) (brightness_manager.get_global_brightness () * 100));
             secondary_text = _("Scroll to change screen brightness");
         }
 
@@ -211,7 +186,7 @@ public class Power.Indicator : Wingpanel.Indicator {
         if (is_in_session) {
             var notification = new Notify.Notification ("indicator-power", "", "display-brightness-symbolic");
             notification.set_hint ("x-canonical-private-synchronous", new Variant.string ("indicator-power"));
-            notification.set_hint ("value", new Variant.int32 (dm.brightness));
+            notification.set_hint ("value", new Variant.int32 ((int) (brightness_manager.get_global_brightness () * 100)));
             try {
                 notification.show ();
                 return true;
@@ -222,6 +197,28 @@ public class Power.Indicator : Wingpanel.Indicator {
         }
 
         return false;
+    }
+
+    private void setup_scroll_controller () {
+        if (brightness_manager.present) {
+            var scroll_controller = new Gtk.EventControllerScroll (BOTH_AXES);
+            scroll_controller.scroll.connect ((controller, dx, dy) => {
+                if (Utils.handle_global_scroll_event (
+                        (Gdk.ScrollEvent) controller.get_current_event ())
+                ) {
+                    if (popover_widget == null || !popover_widget.is_visible ()) {
+                      show_notification ();
+                    }
+
+                    return true;
+                }
+
+                return false;
+            });
+            display_widget.add_controller (scroll_controller);
+
+            brightness_manager.monitor_brightness_changed.connect (update_tooltip);
+        }
     }
 }
 
