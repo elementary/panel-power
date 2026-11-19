@@ -6,5 +6,15 @@
       <summary>Sets if the percentage of the primary battery is shown in the panel.</summary>
       <description>Enable this to see the percentage of the battery directly in the panel without having to click onto the power-indicator.</description>
     </key>
+    <key type="as" name="brightness-up">
+      <default>['XF86MonBrightnessUp']</default>
+      <summary>Global brightness up</summary>
+      <description>Increase monitor brightness on supported panels</description>
+    </key>
+    <key type="as" name="brightness-down">
+      <default>['XF86MonBrightnessDown']</default>
+      <summary>Global brightness down</summary>
+      <description>Decrease monitor brightness on supported panels</description>
+    </key>
   </schema>
 </schemalist>
