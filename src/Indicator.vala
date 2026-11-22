@@ -218,43 +218,22 @@ public class Power.Indicator : Wingpanel.Indicator {
         }
     }
 
-    private bool show_notification () {
-        if (is_in_session) {
-            var notification = new Notify.Notification ("indicator-power", "", "display-brightness-symbolic");
-            notification.set_hint ("x-canonical-private-synchronous", new Variant.string ("indicator-power"));
-            notification.set_hint ("value", new Variant.int32 ((int) (brightness_manager.get_global_brightness () * 100)));
-            try {
-                notification.show ();
-                return true;
-            } catch (Error e) {
-                warning ("Unable to show notification: %s", e.message);
-            }
-
-        }
-
-        return false;
-    }
-
     private void setup_scroll_controller () {
         if (brightness_manager.present) {
             var scroll_controller = new Gtk.EventControllerScroll (BOTH_AXES);
-            scroll_controller.scroll.connect ((controller, dx, dy) => {
-                if (Utils.handle_global_scroll_event (
-                        (Gdk.ScrollEvent) controller.get_current_event ())
-                ) {
-                    if (popover_widget == null || !popover_widget.is_visible ()) {
-                      show_notification ();
-                    }
-
-                    return true;
-                }
-
-                return false;
-            });
+            scroll_controller.scroll.connect (on_scroll);
             display_widget.add_controller (scroll_controller);
 
             brightness_manager.monitor_brightness_changed.connect (update_tooltip);
         }
+    }
+
+    private bool on_scroll (Gtk.EventControllerScroll controller, double dx, double dy) {
+        if (Utils.handle_global_scroll_event ((Gdk.ScrollEvent) controller.get_current_event ())) {
+            maybe_show_brightness_osd (brightness_manager.get_global_brightness ());
+            return true;
+        }
+        return false;
     }
 }
 
