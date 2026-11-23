@@ -10,7 +10,6 @@ You'll need the following dependencies:
 * libgtop2-dev
 * libudev-dev
 * libwingpanel-9-dev
-* libnotify-dev
 * meson >= 0.58.0
 * valac
 
