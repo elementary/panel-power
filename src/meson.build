@@ -38,7 +38,6 @@ dependencies = [
     dependency('gtk4'),
     dependency('libgtop-2.0'),
     dependency('libudev'),
-    dependency('libnotify'),
     meson.get_compiler('vala').find_library('posix'),
     wingpanel_dep
 ]
