@@ -8,5 +8,5 @@ src/Widgets/DeviceList.vala
 src/Widgets/DeviceRow.vala
 src/Widgets/DisplayWidget.vala
 src/Widgets/PopoverWidget.vala
-src/Widgets/ScreenBrightness.vala
+src/Widgets/ScreenBrightnessRow.vala
 src/Widgets/PowerModeList.vala
