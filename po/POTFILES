@@ -1,7 +1,6 @@
 src/Indicator.vala
 src/Services/DBusInterfaces/Device.vala
 src/Services/DBusInterfaces/Properties.vala
-src/Services/DBusInterfaces/Screen.vala
 src/Services/DBusInterfaces/UPower.vala
 src/Services/DeviceManager.vala
 src/Services/Device.vala
