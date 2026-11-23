@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-09 18:50+0000\n"
+"POT-Creation-Date: 2026-11-23 23:10+0000\n"
 "PO-Revision-Date: 2026-01-03 14:55+0000\n"
 "Last-Translator: Bas Ernst <50556177+ErnstBas@users.noreply.github.com>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/wingpanel/"
@@ -56,7 +56,8 @@ msgstr ""
 
 #: data/power.metainfo.xml.in:63
 msgid "Drop inaccurate \"Apps using lots of power\" feature"
-msgstr "De onnauwkeurige functie \"Apps die veel stroom gebruiken\" verwijderen"
+msgstr ""
+"De onnauwkeurige functie \"Apps die veel stroom gebruiken\" verwijderen"
 
 #: data/power.metainfo.xml.in:84 data/power.metainfo.xml.in:102
 #: data/power.metainfo.xml.in:118
