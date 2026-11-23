@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-09 18:50+0000\n"
+"POT-Creation-Date: 2026-11-23 23:10+0000\n"
 "PO-Revision-Date: 2026-07-27 10:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/wingpanel/power/"
@@ -15,25 +15,25 @@ msgstr ""
 "X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-02-06 06:12+0000\n"
 
-#: src/Indicator.vala:185
+#: src/Indicator.vala:196
 #, c-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to hide percentage"
 msgstr "Μεσαίο κλικ για απόκρυψη ποσοστού"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to show percentage"
 msgstr "Μεσαίο κλικ για εμφάνιση ποσοστού"
 
-#: src/Indicator.vala:194
+#: src/Indicator.vala:205
 #, c-format
 msgid "Screen brightness: %i"
 msgstr "Φωτεινότητα οθόνης: %i"
 
-#: src/Indicator.vala:195
+#: src/Indicator.vala:206
 msgid "Scroll to change screen brightness"
 msgstr ""
 
@@ -187,13 +187,18 @@ msgstr "Συσκευή"
 msgid "%i%%"
 msgstr "%i%%"
 
-#: src/Widgets/PopoverWidget.vala:65
+#: src/Widgets/PopoverWidget.vala:67
 msgid "Show Percentage"
 msgstr "Εμφάνιση ποσοστού"
 
-#: src/Widgets/PopoverWidget.vala:90
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Power Settings…"
 msgstr "Ρυθμίσεις ενέργειας…"
+
+#: src/Widgets/ScreenBrightnessRow.vala:38
+#, c-format
+msgid "%s (Primary)"
+msgstr ""
 
 #: src/Widgets/PowerModeList.vala:67
 msgid "Power Saver"

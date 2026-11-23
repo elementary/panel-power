@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: power-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-09 18:50+0000\n"
+"POT-Creation-Date: 2026-11-23 23:10+0000\n"
 "PO-Revision-Date: 2021-08-01 17:35+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/wingpanel/"
@@ -19,29 +19,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Indicator.vala:185
+#: src/Indicator.vala:196
 #, c-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 #, fuzzy
 #| msgid "Middle-click to toggle percentage"
 msgid "Middle-click to hide percentage"
 msgstr "ਫ਼ੀਸਦ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨ ਲਈ ਵਿਚਕਾਰਲੀ-ਕਲਿੱਕ"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 #, fuzzy
 #| msgid "Middle-click to toggle percentage"
 msgid "Middle-click to show percentage"
 msgstr "ਫ਼ੀਸਦ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨ ਲਈ ਵਿਚਕਾਰਲੀ-ਕਲਿੱਕ"
 
-#: src/Indicator.vala:194
+#: src/Indicator.vala:205
 #, c-format
 msgid "Screen brightness: %i"
 msgstr "ਸਕਰੀਨ ਦੀ ਚਮਕ: %i"
 
-#: src/Indicator.vala:195
+#: src/Indicator.vala:206
 msgid "Scroll to change screen brightness"
 msgstr "ਸਕਰੀਨ ਦੀ ਚਮਕ ਬਦਲਣ ਲਈ ਸਕਰੋਲ ਕਰੋ"
 
@@ -195,13 +195,18 @@ msgstr "ਡਿਵਾਈਸ"
 msgid "%i%%"
 msgstr "%i%%"
 
-#: src/Widgets/PopoverWidget.vala:65
+#: src/Widgets/PopoverWidget.vala:67
 msgid "Show Percentage"
 msgstr "ਫ਼ੀਸਦ ਵਿਖਾਓ"
 
-#: src/Widgets/PopoverWidget.vala:90
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Power Settings…"
 msgstr "ਊਰਜਾ ਸੈਟਿੰਗਾਂ…"
+
+#: src/Widgets/ScreenBrightnessRow.vala:38
+#, c-format
+msgid "%s (Primary)"
+msgstr ""
 
 #: src/Widgets/PowerModeList.vala:67
 msgid "Power Saver"

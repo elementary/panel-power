@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-09 18:50+0000\n"
+"POT-Creation-Date: 2026-11-23 23:10+0000\n"
 "PO-Revision-Date: 2025-08-10 04:55+0000\n"
 "Last-Translator: JieXu <xujie0739@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
@@ -15,25 +15,25 @@ msgstr ""
 "X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:48+0000\n"
 
-#: src/Indicator.vala:185
+#: src/Indicator.vala:196
 #, c-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to hide percentage"
 msgstr "单击鼠标中键隐藏百分比"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to show percentage"
 msgstr "单击鼠标中键显示百分比"
 
-#: src/Indicator.vala:194
+#: src/Indicator.vala:205
 #, c-format
 msgid "Screen brightness: %i"
 msgstr "屏幕亮度： %i"
 
-#: src/Indicator.vala:195
+#: src/Indicator.vala:206
 msgid "Scroll to change screen brightness"
 msgstr "调整滚动条更改屏幕亮度"
 
@@ -179,13 +179,18 @@ msgstr "设备"
 msgid "%i%%"
 msgstr "%i%%"
 
-#: src/Widgets/PopoverWidget.vala:65
+#: src/Widgets/PopoverWidget.vala:67
 msgid "Show Percentage"
 msgstr "显示电量"
 
-#: src/Widgets/PopoverWidget.vala:90
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Power Settings…"
 msgstr "电源设置…"
+
+#: src/Widgets/ScreenBrightnessRow.vala:38
+#, c-format
+msgid "%s (Primary)"
+msgstr ""
 
 #: src/Widgets/PowerModeList.vala:67
 msgid "Power Saver"

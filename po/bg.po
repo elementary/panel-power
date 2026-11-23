@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-09 18:50+0000\n"
+"POT-Creation-Date: 2026-11-23 23:10+0000\n"
 "PO-Revision-Date: 2016-08-05 08:36+0000\n"
 "Last-Translator: Адмирал АнимЕ <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,25 +14,25 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:48+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: src/Indicator.vala:185
+#: src/Indicator.vala:196
 #, c-format
 msgid "%s: %s"
 msgstr ""
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to hide percentage"
 msgstr ""
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to show percentage"
 msgstr ""
 
-#: src/Indicator.vala:194
+#: src/Indicator.vala:205
 #, c-format
 msgid "Screen brightness: %i"
 msgstr ""
 
-#: src/Indicator.vala:195
+#: src/Indicator.vala:206
 msgid "Scroll to change screen brightness"
 msgstr ""
 
@@ -188,13 +188,18 @@ msgstr "Устройство"
 msgid "%i%%"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:65
+#: src/Widgets/PopoverWidget.vala:67
 msgid "Show Percentage"
 msgstr "Показване на проценти"
 
-#: src/Widgets/PopoverWidget.vala:90
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Power Settings…"
 msgstr "Настройки на захранването..."
+
+#: src/Widgets/ScreenBrightnessRow.vala:38
+#, c-format
+msgid "%s (Primary)"
+msgstr ""
 
 #: src/Widgets/PowerModeList.vala:67
 #, fuzzy

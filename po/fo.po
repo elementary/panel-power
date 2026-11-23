@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: power-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-09 18:50+0000\n"
+"POT-Creation-Date: 2026-11-23 23:10+0000\n"
 "PO-Revision-Date: 2018-06-05 05:22-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,25 +17,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Indicator.vala:185
+#: src/Indicator.vala:196
 #, c-format
 msgid "%s: %s"
 msgstr ""
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to hide percentage"
 msgstr ""
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 msgid "Middle-click to show percentage"
 msgstr ""
 
-#: src/Indicator.vala:194
+#: src/Indicator.vala:205
 #, c-format
 msgid "Screen brightness: %i"
 msgstr ""
 
-#: src/Indicator.vala:195
+#: src/Indicator.vala:206
 msgid "Scroll to change screen brightness"
 msgstr ""
 
@@ -187,12 +187,17 @@ msgstr ""
 msgid "%i%%"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:65
+#: src/Widgets/PopoverWidget.vala:67
 msgid "Show Percentage"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:90
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Power Settings…"
+msgstr ""
+
+#: src/Widgets/ScreenBrightnessRow.vala:38
+#, c-format
+msgid "%s (Primary)"
 msgstr ""
 
 #: src/Widgets/PowerModeList.vala:67

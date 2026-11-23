@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-09 18:50+0000\n"
+"POT-Creation-Date: 2026-11-23 23:10+0000\n"
 "PO-Revision-Date: 2022-09-21 06:14+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -15,29 +15,29 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:48+0000\n"
 
-#: src/Indicator.vala:185
+#: src/Indicator.vala:196
 #, c-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 #, fuzzy
 #| msgid "Middle-click to toggle percentage"
 msgid "Middle-click to hide percentage"
 msgstr "کرتەی ناوەڕاست بکە کردنەوەی ڕێژە"
 
-#: src/Indicator.vala:186
+#: src/Indicator.vala:197
 #, fuzzy
 #| msgid "Middle-click to toggle percentage"
 msgid "Middle-click to show percentage"
 msgstr "کرتەی ناوەڕاست بکە کردنەوەی ڕێژە"
 
-#: src/Indicator.vala:194
+#: src/Indicator.vala:205
 #, c-format
 msgid "Screen brightness: %i"
 msgstr "ڕووناکی ڕوونما: %i"
 
-#: src/Indicator.vala:195
+#: src/Indicator.vala:206
 msgid "Scroll to change screen brightness"
 msgstr "سکرۆڵ بکە بۆ زیاد و کەمکردنی ڕووناکی"
 
@@ -191,13 +191,18 @@ msgstr "ئامێر"
 msgid "%i%%"
 msgstr "%i%%"
 
-#: src/Widgets/PopoverWidget.vala:65
+#: src/Widgets/PopoverWidget.vala:67
 msgid "Show Percentage"
 msgstr "پشاندانی ڕێژەی پاتری"
 
-#: src/Widgets/PopoverWidget.vala:90
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Power Settings…"
 msgstr "ڕێکخستنەکان…"
+
+#: src/Widgets/ScreenBrightnessRow.vala:38
+#, c-format
+msgid "%s (Primary)"
+msgstr ""
 
 #: src/Widgets/PowerModeList.vala:67
 #, fuzzy
