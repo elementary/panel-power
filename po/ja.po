@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-23 23:10+0000\n"
-"PO-Revision-Date: 2025-08-30 22:55+0000\n"
+"PO-Revision-Date: 2026-11-27 14:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/wingpanel/"
 "power/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:48+0000\n"
 
 #: src/Indicator.vala:196
@@ -190,7 +190,7 @@ msgstr "電源設定…"
 #: src/Widgets/ScreenBrightnessRow.vala:38
 #, c-format
 msgid "%s (Primary)"
-msgstr ""
+msgstr "%s (プライマリー)"
 
 #: src/Widgets/PowerModeList.vala:67
 msgid "Power Saver"
